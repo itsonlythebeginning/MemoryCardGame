@@ -122,25 +122,27 @@ setTimeout(showCards, 1000)
 
 function chooseCard() {
 
-    if (firstCard === undefined) {
-        firstCard = this
+    if (this.classList.contains("game__field-card_open") === false) {
+        if (firstCard === undefined) {
+            firstCard = this
 
-        this.classList.add("game__field-card_open")
-        this.children[0].classList.remove("game__field-card_front_active")
-        this.children[1].classList.remove("game__field-card_back_active")
-    }
+            this.classList.add("game__field-card_open")
+            this.children[0].classList.remove("game__field-card_front_active")
+            this.children[1].classList.remove("game__field-card_back_active")
+        }
 
-    else if (secondCard === undefined && secondCard !== firstCard) {
-        secondCard = this
+        else if (secondCard === undefined && secondCard !== firstCard) {
+            secondCard = this
 
-        this.classList.add("game__field-card_open")
-        this.children[0].classList.remove("game__field-card_front_active")
-        this.children[1].classList.remove("game__field-card_back_active")
+            this.classList.add("game__field-card_open")
+            this.children[0].classList.remove("game__field-card_front_active")
+            this.children[1].classList.remove("game__field-card_back_active")
 
-        setTimeout(function () {
-            checkTwo()
-        }, 1000)
+            setTimeout(function () {
+                checkTwo()
+            }, 1000)
 
+        }
     }
 
 }
